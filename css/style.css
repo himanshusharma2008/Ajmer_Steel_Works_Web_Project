@@ -39,7 +39,6 @@ body {
     line-height: 1.7;
     text-align: center;
 }
-
 img,
 video {
     max-width: 100%;
@@ -49,38 +48,65 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* 2. HEADER AND NAVIGATION */
+/* 2. HEADER AND NAVIGATION  (single source of truth for ALL pages)
+   Do NOT override header, nav, .image or .logo in page <style> blocks
+   or in responsive.css - that is what made the nav differ per page. */
 header {
     width: 100%;
+    min-height: 84px;
+    padding: 10px 4%;
     background: linear-gradient(135deg, #303942, #171B20);
     border-bottom: 2px solid var(--orange);
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     z-index: 10;
 }
 
+header .image {
+    flex: 0 0 auto;
+    width: auto;
+    height: 64px;
+}
+
+header .image img,
+header .logo {
+    display: block;
+    width: auto;
+    max-width: none;
+    height: 64px;
+    object-fit: contain;
+}
+
 nav {
-    width: 100%;
-    max-width: 1250px;
-    min-height: 76px;
-    margin: 0 auto;
-    padding: 14px 20px;
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
 }
 
 nav a {
-    min-height: 46px;
-    padding: 10px 20px;
+    min-height: 44px;
+    padding: 8px 18px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     font-size: 16px;
     font-weight: bold;
+    line-height: 1.2;
     text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
     border: 1px solid transparent;
     border-radius: 7px;
     transition: 0.3s ease;
@@ -91,6 +117,37 @@ nav a:focus-visible {
     color: var(--orange);
     background: var(--steel);
     border-color: var(--border);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    header { padding: 10px 3%; }
+    nav a { padding: 8px 12px; font-size: 15px; }
+}
+
+/* Mobile: logo centred on top, links in one row below */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 8px;
+    }
+    header .image,
+    header .image img,
+    header .logo { height: 52px; }
+    nav {
+        width: 100%;
+        flex: 0 0 auto;
+        justify-content: center;
+        gap: 4px;
+    }
+    nav a { min-height: 40px; padding: 8px 10px; font-size: 14px; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    nav a { padding: 8px 7px; font-size: 13px; }
 }
 
 /* 3. BUSINESS TITLE */
@@ -822,17 +879,6 @@ footer .copyright {
 
 /* 18. MOBILE LAYOUT */
 @media (max-width: 600px) {
-    nav {
-        padding: 10px 6px;
-        gap: 5px;
-    }
-
-    nav a {
-        min-height: 40px;
-        padding: 8px 11px;
-        font-size: 13px;
-    }
-
     .hero-title {
         padding: 28px 14px;
     }
@@ -956,11 +1002,6 @@ footer .copyright {
     body:not(.products-page) .product-card img {
         height: 220px;
     }
-
-    nav a {
-        padding: 8px;
-        font-size: 12px;
-    }
 }
 
 /* 20. ACCESSIBILITY */
@@ -988,6 +1029,11 @@ body.products-page img:not(.logo):not(.site-logo):not(.no-16-9) {
     object-position: center !important;
     margin: 18px auto !important;
     border-radius: 6px !important;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Images inside product cards */

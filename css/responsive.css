@@ -1,0 +1,55 @@
+/* responsive.css - load AFTER style.css and after any page <style> block */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; overflow-x: hidden; }
+img, iframe { max-width: 100%; }
+
+/* Forms (contact page) */
+form { display: flex; flex-direction: column; gap: 8px; }
+form input[type="text"],
+form input[type="email"],
+form textarea { width: 100%; max-width: 100%; padding: 10px; font: inherit; }
+form input[type="submit"] { padding: 12px; font: inherit; cursor: pointer; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .b1 { width: 46% !important; height: auto !important; min-height: 0 !important; }
+  .b1 img { width: 100% !important; height: auto !important; }
+  .main > .box,
+  .main > .box1 { width: 90% !important; margin-bottom: 20px; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  /* header / nav are handled ONLY in style.css */
+
+  h1 { font-size: 1.5rem !important; text-align: center; padding: 0 10px; }
+  h2 { font-size: 1.3rem !important; }
+  h3 { font-size: 1.1rem !important; }
+  body > p { text-align: center; padding: 0 10px; }
+
+  .main {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 12px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .main > .box,
+  .main > .box1 { width: 100% !important; height: auto !important; margin: 0 0 20px 0 !important; }
+  .box1 { padding: 10px; }
+
+  /* Products: one card per row */
+  .box { height: auto !important; }
+  .b1 { width: 100% !important; height: auto !important; padding-bottom: 10px; }
+  .b1 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  iframe { height: 220px; }
+  footer { padding: 12px 10px; text-align: center; }
+}

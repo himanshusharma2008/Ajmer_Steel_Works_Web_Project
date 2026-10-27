@@ -2,37 +2,72 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Steel Works - Contact Us</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .main{
+            border: 1PX SOLID white;
+            display: flex;  
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .box.box1{
+
+            height: 100%;
+            width:45%;
+            border: 1px solid white;
+
+        }
+        form{
+            height: 100%;
+        }
+        .main a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
     <header>
-          <nav>
-        <a href="index.html">Home</a>
-        <a href="about us.html">About Us</a>
-        <a href="Product.html">products</a>
-        <a href="contact us.html">Contact Us</a>
-    </nav>
-      
+        <div class="image"><img class="logo" src="images/logo.jpeg" alt="Ajmer Steel Works logo"></div>
+        <nav>
+            <a href="index.html" class="hello">Home</a>
+            <a href="about us.html" class="hello">About Us</a>
+            <a href="Product.html" class="hello">Products</a>
+            <a href="contact us.html" class="hello">Contact Us</a>
+        </nav>
     </header>
-      <h1>AJMER STEEL WORKS</h1>
+     <section class="hero-title">
+
+        <h1>AJMER STEEL WORKS</h1>
+
         <p>Strong Steel, Strong Future</p>
+
+    </section>
 
    
 
     <div class="main">
-        <h2>Contact Us</h2>
+       <div class="box">
+         <h2>Contact Us</h2>
 
         <p>If you need steel fabrication services, contact us
         using the details below.</p>
 
         <h3>Contact Information</h3>
         <p>Address: Ajmer, Rajasthan</p>
-        <p>Phone: 6375417637</p>
-        <p>Email: himanshuu27082008@gmail.com</p>
-
-        <h3>Send Us an Enquiry</h3>
+        <p><a href="tel:9024172290">Phone: 9024172290</a></p>
+        <p><a href="mailto:dhurvtanwar1214@gmail.com">Email: dhurvtanwar1214@gmail.com </a></p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.6331531062983!2d74.6521875!3d26.435312499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be6ce06bcaa2d%3A0x934f773a2ea753d3!2sTanwar%20Steel%20works!5e0!3m2!1sen!2sin!4v1792991952451!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+       </div>
+       <div class="box1">
+         <h3>Send Us an Enquiry</h3>
 
         <form>
             <label>Name:</label>
@@ -46,10 +81,12 @@
 
             <input type="submit" value="Submit">
         </form>
-    </div>
+
+       </div>
+           </div>
 
     <footer>
-        <p>Copyright &copy; 2026 Ajmer Steel Works</p>
+        <p> &copy; 2026 Ajmer Steel Works</p>
     </footer>
 
 </body>
